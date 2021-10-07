@@ -2,15 +2,11 @@
 const dimensionsText = document.querySelector('.bottom-slider');
 dimensions = document.createElement('div');
 const slider = document.querySelector('.slider');
-dimensions.textContent = slider.value + " x " + slider.value;
-dimensionsText.appendChild(dimensions);
 
-//core box functionality
-//box load
-
-
-let numSquares = 4; //update so this is automatic
-
+function setSliderText(){
+    dimensions.textContent = slider.value + " x " + slider.value;
+    dimensionsText.appendChild(dimensions);
+}
 function populateSquare (numSquares) {
     const dimensionSquare = 100/numSquares;
     let boxes = [];
@@ -21,33 +17,45 @@ function populateSquare (numSquares) {
         container.appendChild(boxes[0]);
     }
 }
+function colorBackground(){
+    const selectBoxes = document.querySelectorAll(".box")
+    selectBoxes.forEach(item => item.addEventListener('mouseover', function() {
+        item.style.backgroundColor="purple";           
+    })) 
+}
+setSliderText()
 
-let mainHeight = document.querySelector('.box-container').clientHeight;
+//core box functionality
+//box load
+let numSquares = 4; //default dimension
 const container = document.querySelector('.box-container');
-populateSquare (numSquares)
-const selectBoxes = document.querySelectorAll(".box")
-selectBoxes.forEach(item => item.addEventListener('mouseover', (e) => {
-    item.style.backgroundColor="purple";           
-}))
+let mainHeight = container.clientHeight;
+populateSquare(numSquares)
+colorBackground()
 
 //box update
 slider.oninput = function() {
     //change text next to slider
-    let numSquares = this.value;
-    dimensions.textContent = numSquares + " x " + numSquares;
-    dimensionsText.appendChild(dimensions);
+    numSquares = this.value;
+    setSliderText()
 
     //alter the dimensions of the box
     const container = document.querySelector('.box-container');
     while(container.firstChild){
         container.removeChild(container.firstChild);
     }
-    
-    populateSquare (numSquares)
-    const selectBoxes = document.querySelectorAll(".box")
-    selectBoxes.forEach(item => item.addEventListener('mouseover', (e) => {
-        item.style.backgroundColor="purple";           
-    }))
-
+    populateSquare(numSquares)
+    colorBackground()
+    reset()
 } 
 
+//reset button functionality
+function reset(){
+    const resetButton = document.querySelector(".reset");
+    const selectBoxes = document.querySelectorAll(".box");
+    resetButton.addEventListener('click', function() {
+        for(i=0;i<selectBoxes.length;i++){
+            selectBoxes[i].style.backgroundColor="yellow"
+        }
+    })
+}
