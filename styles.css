@@ -1,0 +1,42 @@
+*{
+    outline: 1px solid blue;
+    margin:0;
+    padding:0;
+}
+
+
+
+.container{
+    display:flex;
+    justify-content: center;
+    gap:10px;
+}
+
+.box-container{
+    background-color: red;
+    width:500px;
+    height:500px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.box{
+    background-color: yellow;
+}
+
+.left-buttons{
+   display:flex; 
+   flex-direction: column;
+   justify-content: center;
+   gap:10px;
+}
+
+.bottom-slider{
+    display:flex;
+    justify-content: center;
+    gap:10px;
+}
+
