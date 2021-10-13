@@ -3,11 +3,16 @@ const dimensionsText = document.querySelector('.bottom-slider');
 dimensions = document.createElement('div');
 const slider = document.querySelector('.slider');
 
+//color button functionality
+const colorButton = document.querySelector("input");
+colorButton.addEventListener("change", colorBackground(colorButton.value))
+
 function setSliderText(){
     dimensions.textContent = slider.value + " x " + slider.value;
     dimensionsText.appendChild(dimensions);
 }
-function populateSquare (numSquares) {
+
+function populateSquare(numSquares) {
     const dimensionSquare = 100/numSquares;
     let boxes = [];
     for(i=0;i<numSquares**2;i++){
@@ -17,21 +22,29 @@ function populateSquare (numSquares) {
         container.appendChild(boxes[0]);
     }
 }
-function colorBackground(){
+
+function colorBackground(color){
     const selectBoxes = document.querySelectorAll(".box")
     selectBoxes.forEach(item => item.addEventListener('mouseover', function() {
-        item.style.backgroundColor="purple";           
+        item.style.backgroundColor=color;           
     })) 
 }
+
+function darken(){
+
+}
+
 setSliderText()
 
 //core box functionality
 //box load
-let numSquares = 4; //default dimension
+let defaultNumSquares = 4; //default dimension
 const container = document.querySelector('.box-container');
 let mainHeight = container.clientHeight;
-populateSquare(numSquares)
-colorBackground()
+populateSquare(defaultNumSquares)
+colorBackground(colorButton.value)
+
+reset()
 
 //box update
 slider.oninput = function() {
@@ -45,9 +58,10 @@ slider.oninput = function() {
         container.removeChild(container.firstChild);
     }
     populateSquare(numSquares)
-    colorBackground()
+    colorBackground(colorButton.value)
     reset()
 } 
+
 
 //reset button functionality
 function reset(){
