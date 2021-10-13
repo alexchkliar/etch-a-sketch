@@ -1,13 +1,27 @@
 *{
-    outline: 1px solid blue;
     margin:0;
     padding:0;
+    background-color: #fb8500;
+    font-size: 18px;
 }
 
 .container{
-    display:flex;
+    display: flex;
     justify-content: center;
-    gap:10px;
+    gap:25px;
+}
+
+.core{
+    display: flex;
+    flex-direction: column;
+}
+
+.core p{
+    font-size: 30px;
+    text-align: center;
+    font-family: gameover;
+    margin: 22px 0;
+    font-weight: bold;
 }
 
 .box-container{
@@ -19,22 +33,37 @@
     justify-content: center;
     align-items: center;
     align-content: center;
+    outline: 5px solid black;
+    border-radius: 2px;
 }
 
 .box{
-    background-color: yellow;
+    background-color: white;
+    outline: 1px solid black;
 }
 
 .left-buttons{
    display:flex; 
    flex-direction: column;
    justify-content: center;
-   gap:10px;
+   gap:13px;
+   align-items: center;
 }
 
 .bottom-slider{
     display:flex;
     justify-content: center;
+    align-items: center;
     gap:10px;
+    margin-top: 10px;
 }
 
+button, input{
+    width:150px;
+    height:30px;
+    border-radius: 5px;
+}
+
+button{
+    background-color:#D3D3D3;
+}

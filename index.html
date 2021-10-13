@@ -11,19 +11,26 @@
 </head>
 
 <body>
+
   <div class="container">
     <div class="left-buttons">
+      Select color:
       <input type="color"></input>
-      <button>Button 2</button>
-      <button>Button 3</button>
+      <br>
+      <button class="random">Random color</button>
+      <button class="eraser">Eraser</button>
       <button class="reset">Reset</button>
     </div>
-    <div class="box-container"></div>
+    <div class="core">
+      <p>Etch-a-sketch</p>
+      <div class="box-container"></div>
+      <div class="bottom-slider">
+        Select dimension: 
+        <input type="range" min="2" max="64" value="16" class="slider" id="myRange">
+      </div>
+    </div>
   </div>
-  <div class="bottom-slider">
-    Select dimensions: 
-    <input type="range" min="2" max="64" value="4" class="slider" id="myRange">
-  </div>
+
 </body>
 
 
