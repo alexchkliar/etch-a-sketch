@@ -7,31 +7,35 @@
   <title>Etch-a-sketch</title>
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
-
+  <script src="script.js" defer></script>
+  <script src="https://kit.fontawesome.com/3d190f4026.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
-  <div class="container">
-    <div class="left-buttons">
-      Select color:
-      <input type="color"></input>
-      <br>
-      <button class="random">Random color</button>
-      <button class="eraser">Eraser</button>
-      <button class="reset">Reset grid</button>
-    </div>
-    <div class="core">
-      <p>Etch-a-sketch</p>
-      <div class="box-container"></div>
-      <div class="bottom-slider">
-        Select dimension: 
-        <input type="range" min="2" max="64" value="16" class="slider" id="myRange">
+  <main>
+    <div class="container">
+      <div class="left-buttons">
+        Select color:
+        <input type="color"></input>
+        <br>
+        <button class="random">Random color</button>
+        <button class="eraser">Eraser</button>
+        <button class="reset">Reset grid</button>
+      </div>
+      <div class="core">
+        <p>Etch-a-sketch</p>
+        <div class="box-container"></div>
+        <div class="bottom-slider">
+          Select dimension: 
+          <input type="range" min="2" max="64" value="16" class="slider" id="myRange">
+        </div>
       </div>
     </div>
-  </div>
-
+  </main>
+  <footer>
+    Alex Chkliar 
+    <a href="https://github.com/alexchkliar" class="fab fa-github"></a>
+  </footer>
 </body>
-
 
 </html>

@@ -1,8 +1,12 @@
 *{
     margin:0;
     padding:0;
-    background-color: #fb8500;
     font-size: 18px;
+}
+
+main{
+    height: 95vh;
+    background-color: #fb8500;
 }
 
 .container{
@@ -66,4 +70,27 @@ button, input{
 
 button{
     background-color:#D3D3D3;
+}
+
+
+/* .major-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+footer{
+    text-align: center;
+    background-color: #222222;
+    height: 5vh;
+    color: white;
+    margin: auto;
+    justify-content: center;
+    line-height:5vh;
+}
+
+a{
+    padding-left: 8px;
+    color:white;
+    text-decoration: none;
 }
