@@ -1,14 +1,12 @@
 // slider functionality
 let defaultBoxColor = "#FFFFFF"; //default dimension, make sure this ties with CSS value
 
-
 const dimensionsText = document.querySelector(".bottom-slider");
 const colorButton = document.querySelector("input");
 const randomButton = document.querySelector(".random");
 const eraserButton = document.querySelector(".eraser");
 const slider = document.querySelector(".slider");
 const container = document.querySelector(".box-container");
-
 
 let defaultNumSquares = slider.value; //default dimension
 dimensions = document.createElement("div");
